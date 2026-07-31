@@ -1,0 +1,373 @@
+media:
+  - name: images
+    label: Imágenes
+    input: static/assets/uploads/images
+    output: /assets/uploads/images
+    categories: [image]
+    rename: safe
+  - name: documents
+    label: Documentos
+    input: static/assets/uploads/documents
+    output: /assets/uploads/documents
+    categories: [document, audio, video]
+    rename: safe
+
+settings:
+  commit:
+    identity: user
+
+content:
+  - name: general
+    label: Contenido general
+    type: group
+    items:
+      - name: site
+        label: Portada y textos generales
+        type: file
+        path: content/site.json
+        format: json
+        fields:
+          - name: brand_title
+            label: Texto de la cabecera
+            type: string
+            required: true
+          - name: institution
+            label: Institución
+            type: string
+            required: true
+          - name: page_title
+            label: Título principal
+            type: text
+            required: true
+          - name: eyebrow
+            label: Línea superior
+            type: string
+          - name: hero_intro
+            label: Introducción de portada
+            type: text
+          - name: welcome_title
+            label: Título de bienvenida
+            type: string
+          - name: welcome_html
+            label: Texto de bienvenida
+            type: rich-text
+            options:
+              format: html
+              media: images
+          - name: commitment_title
+            label: Título del compromiso
+            type: string
+          - name: commitment_html
+            label: Texto del compromiso
+            type: rich-text
+            options:
+              format: html
+              media: images
+          - name: funding_title
+            label: Título de financiación
+            type: string
+          - name: funding_html
+            label: Texto de financiación
+            type: rich-text
+            options:
+              format: html
+              media: images
+          - name: ai_title
+            label: Título sobre uso de IA
+            type: string
+          - name: ai_html
+            label: Texto sobre uso de IA
+            type: rich-text
+            options:
+              format: html
+              media: images
+
+      - name: otrosi
+        label: Otrosí / Recursos
+        type: file
+        path: content/otrosi.json
+        format: json
+        fields:
+          - name: title
+            label: Título
+            type: string
+          - name: html
+            label: Presentación
+            type: rich-text
+            options:
+              format: html
+              media: images
+
+
+      - name: multimedia_section
+        label: Presentación de Multimedia
+        type: file
+        path: content/multimedia_section.json
+        format: json
+        fields:
+          - name: enabled
+            label: Mostrar pestaña Multimedia
+            type: boolean
+            description: Actívala cuando haya contenidos preparados para publicar.
+          - name: title
+            label: Título
+            type: string
+          - name: html
+            label: Texto de presentación
+            type: rich-text
+            options:
+              format: html
+              media: images
+
+      - name: contact
+        label: Contacto
+        type: file
+        path: content/contact.json
+        format: json
+        fields:
+          - name: intro
+            label: Introducción
+            type: text
+          - name: people
+            label: Personas responsables
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{name}"
+            fields:
+              - name: name
+                label: Nombre
+                type: string
+                required: true
+              - name: position
+                label: Cargo
+                type: string
+              - name: institution
+                label: Institución
+                type: string
+              - name: email
+                label: Correo electrónico
+                type: string
+                required: true
+          - name: closing
+            label: Texto final
+            type: text
+
+  - name: projects
+    label: Proyectos
+    type: collection
+    path: content/projects
+    format: json
+    operations:
+      create: false
+      delete: false
+      rename: false
+    view:
+      primary: acronym
+      fields: [kind, title]
+      sort: order
+      order: asc
+    fields:
+      - name: order
+        label: Orden
+        type: number
+        readonly: true
+      - name: acronym
+        label: Siglas
+        type: string
+        required: true
+      - name: kind
+        label: Tipo de grupo
+        type: string
+      - name: card_text
+        label: Resumen de la tarjeta
+        type: text
+      - name: title
+        label: Título completo
+        type: string
+      - name: tagline
+        label: Temas destacados
+        type: string
+      - name: institutional_url
+        label: Enlace institucional
+        type: string
+      - name: body_html
+        label: Presentación completa
+        type: rich-text
+        options:
+          format: html
+          media: images
+      - name: topics
+        label: Etiquetas temáticas
+        type: string
+        list: true
+      - name: results_intro
+        label: Introducción a resultados y actividades
+        type: text
+
+  - name: resources
+    label: Resultados y actividades
+    type: collection
+    path: content/resources
+    format: json
+    filename:
+      template: "{primary}.json"
+      field: title
+    view:
+      primary: title
+      fields: [group, type, date, published]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: group
+        label: Grupo
+        type: select
+        required: true
+        options:
+          values: [IAIURIS, DEHART, CXT, General]
+      - name: type
+        label: Tipo de contenido
+        type: select
+        required: true
+        options:
+          values:
+            - Publicación
+            - Proyecto de innovación docente
+            - Actas y jornadas
+            - Material docente
+            - Recurso web
+            - Otro
+      - name: summary
+        label: Descripción
+        type: text
+      - name: url
+        label: Enlace
+        type: string
+      - name: date
+        label: Fecha
+        type: date
+      - name: published
+        label: Mostrar en la web
+        type: boolean
+      - name: featured
+        label: Destacar
+        type: boolean
+
+
+  - name: multimedia
+    label: Multimedia
+    type: collection
+    path: content/multimedia
+    format: json
+    filename:
+      template: "{primary}.json"
+      field: title
+    view:
+      primary: title
+      fields: [group, type, platform, date, published]
+      sort: date
+      order: desc
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: group
+        label: Grupo
+        type: select
+        required: true
+        options:
+          values: [IAIURIS, DEHART, CXT, General]
+      - name: type
+        label: Tipo de contenido
+        type: select
+        required: true
+        options:
+          values:
+            - Vídeo
+            - Pódcast
+            - Audio
+            - Conferencia grabada
+            - Presentación narrada
+            - Material audiovisual
+      - name: platform
+        label: Plataforma
+        type: select
+        options:
+          values: [YouTube, Spotify, iVoox, SoundCloud, URJC, Otra]
+      - name: author
+        label: Autor, ponente o participante
+        type: string
+      - name: date
+        label: Fecha
+        type: date
+      - name: summary
+        label: Descripción
+        type: text
+      - name: url
+        label: Enlace principal
+        type: string
+        description: Dirección de YouTube, Spotify, iVoox, SoundCloud o plataforma institucional.
+      - name: embed_url
+        label: Enlace de inserción
+        type: string
+        description: Opcional. Puede dejarse vacío en los vídeos normales de YouTube.
+      - name: thumbnail
+        label: Imagen o miniatura
+        type: image
+        options:
+          media: images
+      - name: transcript_url
+        label: Transcripción o material complementario
+        type: string
+      - name: published
+        label: Mostrar en la web
+        type: boolean
+      - name: featured
+        label: Destacar
+        type: boolean
+
+  - name: notices
+    label: Avisos
+    type: collection
+    path: content/notices
+    format: json
+    filename:
+      template: "{primary}.json"
+      field: title
+    view:
+      primary: title
+      fields: [type, date_text, published]
+    fields:
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: type
+        label: Tipo de actividad
+        type: select
+        options:
+          values: [Congreso, Jornada, Seminario, Conferencia, Curso, Taller, Publicación, Otro]
+      - name: date_text
+        label: Fecha
+        type: string
+      - name: location
+        label: Lugar
+        type: string
+      - name: summary
+        label: Descripción
+        type: text
+      - name: url
+        label: Enlace de información o inscripción
+        type: string
+      - name: published
+        label: Mostrar en la web
+        type: boolean
+      - name: featured
+        label: Destacar
+        type: boolean
