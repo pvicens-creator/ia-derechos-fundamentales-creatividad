@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{{META_DESCRIPTION}}">
+  {{ROBOTS_META}}
+  <meta name="theme-color" content="#8f1714">
+  <title>{{DOCUMENT_TITLE}}</title>
+  <link rel="icon" href="/assets/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/styles.css">
+  {{IDENTITY_SCRIPT}}
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio">
+        <img src="/assets/logo-oteiza.png" alt="" width="118" height="118">
+        <span>
+          <strong>{{BRAND_TITLE}}</strong>
+          <small>{{INSTITUTION}}</small>
+        </span>
+      </a>
+
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu-principal">
+        <span aria-hidden="true">☰</span> Menú
+      </button>
+
+      <nav id="menu-principal" class="main-nav" aria-label="Navegación principal">
+        <a href="#inicio" class="active">Inicio</a>
+        <a href="#iaiuris">IAIURIS</a>
+        <a href="#dehart">DEHART</a>
+        <a href="#cxt">CXT</a>
+        <a href="#recursos">Recursos</a>
+        {{MULTIMEDIA_NAV}}
+        <a href="#avisos">Avisos</a>
+      </nav>
+
+      {{SESSION_CONTROLS}}
+    </div>
+  </header>
+
+  {{PRIVATE_NOTICE}}
+
+  <main id="contenido">
+    <section class="hero" id="inicio">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">{{EYEBROW}}</p>
+          <h1>{{PAGE_TITLE}}</h1>
+          <p class="hero-lead">{{HERO_INTRO}}</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#proyectos">Conocer los proyectos</a>
+            <a class="button secondary" href="#avisos">Consultar avisos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section welcome">
+      <div class="container text-column">
+        <p class="section-label">Bienvenida</p>
+        <h2>{{WELCOME_TITLE}}</h2>
+        <div class="prose">{{WELCOME_HTML}}</div>
+      </div>
+    </section>
+
+    <section class="section tinted commitment">
+      <div class="container text-column">
+        <p class="section-label">Compromiso</p>
+        <h2>{{COMMITMENT_TITLE}}</h2>
+        <div class="prose">{{COMMITMENT_HTML}}</div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Proyectos</p>
+          <h2>Tres iniciativas, una plataforma compartida</h2>
+          <p>Investigación jurídica, innovación docente y divulgación al servicio de la comunidad universitaria y la sociedad.</p>
+        </div>
+        <div class="cards three">
+          {{PROJECT_CARDS}}
+        </div>
+      </div>
+    </section>
+
+    {{PROJECT_SECTIONS}}
+
+    <section class="section resources" id="recursos">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Otrosí · Recursos</p>
+          <h2>{{OTROSI_TITLE}}</h2>
+          <div class="prose">{{OTROSI_HTML}}</div>
+        </div>
+
+        <div class="resource-filter filter-group" data-filter-target=".resource-card" data-filter-attribute="group" aria-label="Filtros de recursos">
+          <button class="filter-button active" type="button" data-filter="all">Todos</button>
+          <button class="filter-button" type="button" data-filter="IAIURIS">IAIURIS</button>
+          <button class="filter-button" type="button" data-filter="DEHART">DEHART</button>
+          <button class="filter-button" type="button" data-filter="CXT">CXT</button>
+        </div>
+
+        <div class="resource-list">
+          {{ALL_RESOURCES}}
+        </div>
+      </div>
+    </section>
+
+
+    {{MULTIMEDIA_SECTION}}
+
+    <section class="section" id="avisos">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Avisos</p>
+          <h2>Actividades y convocatorias</h2>
+          <p>Congresos, jornadas, seminarios, cursos, talleres y otras iniciativas de interés académico.</p>
+        </div>
+        <div class="notice-list">
+          {{NOTICES}}
+        </div>
+      </div>
+    </section>
+
+    <section class="section responsibility">
+      <div class="container two-columns">
+        <article>
+          <p class="section-label">Financiación</p>
+          <h2>{{FUNDING_TITLE}}</h2>
+          <div class="prose">{{FUNDING_HTML}}</div>
+        </article>
+        <article>
+          <p class="section-label">Uso responsable de la IA</p>
+          <h2>{{AI_TITLE}}</h2>
+          <div class="prose">{{AI_HTML}}</div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contacto">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/logo-oteiza.png" alt="" width="76" height="76">
+        <h2>Contacto</h2>
+        <p>{{CONTACT_INTRO}}</p>
+      </div>
+      {{CONTACT_PEOPLE}}
+    </div>
+    <div class="container contact-closing">{{CONTACT_CLOSING}}</div>
+    <div class="container footer-bottom">
+      {{FOOTER_STATUS}}
+      <div class="footer-actions">
+        {{ADMIN_LINK}}
+        <a href="#inicio">Volver arriba ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
