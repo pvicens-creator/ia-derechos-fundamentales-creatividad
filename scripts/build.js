@@ -305,8 +305,7 @@ if (isPublic) {
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
 `);
-  fs.writeFileSync(path.join(dist, "_redirects"), `/admin      /admin/              301!
-/admin/*    /admin/index.html    200
+  fs.writeFileSync(path.join(dist, "_redirects"), `/admin/*    /admin/index.html    200
 `);
 } else {
   fs.writeFileSync(path.join(dist, "robots.txt"), "User-agent: *\nDisallow: /\n");
@@ -318,10 +317,7 @@ if (isPublic) {
   X-Robots-Tag: noindex, nofollow, noarchive
   Cache-Control: no-store
 `);
-  fs.writeFileSync(path.join(dist, "_redirects"), `# Recursos públicos necesarios para iniciar sesión
-/login      /login/              301!
-/login/*    /login/index.html    200
-/admin      /admin/              301!
+  fs.writeFileSync(path.join(dist, "_redirects"), `# La raíz contiene directamente la pantalla de acceso privado.
 /admin/*    /admin/index.html    200
 /assets/*   /assets/:splat       200
 /styles.css /styles.css          200
@@ -330,14 +326,9 @@ if (isPublic) {
 /login.js   /login.js            200
 /robots.txt /robots.txt          200
 
-# El contenido de la rama de edición exige el rol member
+# El contenido de la rama de edición exige el rol member.
 /privado/*  /privado/:splat      200!  Role=member
-/privado/*  /login/              302!
-
-# La raíz lleva al borrador si hay permiso y al acceso en caso contrario
-/            /privado/           302!  Role=member
-/            /login/             302!
-/index.html  /                   302!
+/privado/*  /                     302!
 `);
 }
 
