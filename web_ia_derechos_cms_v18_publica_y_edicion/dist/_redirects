@@ -1,0 +1,20 @@
+# Recursos públicos necesarios para iniciar sesión
+/login      /login/              301!
+/login/*    /login/index.html    200
+/admin      /admin/              301!
+/admin/*    /admin/index.html    200
+/assets/*   /assets/:splat       200
+/styles.css /styles.css          200
+/script.js  /script.js           200
+/login.css  /login.css           200
+/login.js   /login.js            200
+/robots.txt /robots.txt          200
+
+# El contenido de la rama de edición exige el rol member
+/privado/*  /privado/:splat      200!  Role=member
+/privado/*  /login/              302!
+
+# La raíz lleva al borrador si hay permiso y al acceso en caso contrario
+/            /privado/           302!  Role=member
+/            /login/             302!
+/index.html  /                   302!

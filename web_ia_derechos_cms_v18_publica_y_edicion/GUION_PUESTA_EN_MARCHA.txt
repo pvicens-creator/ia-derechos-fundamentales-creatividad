@@ -1,0 +1,103 @@
+GUION DE PUESTA EN MARCHA
+=========================
+
+OBJETIVO
+--------
+- Rama main: web pública y estable.
+- Rama edicion: zona privada donde se preparan y revisan cambios.
+- Pages CMS: formularios sencillos para editar textos y añadir contenidos.
+- Multimedia: puede prepararse mientras está oculta y mostrarse con un interruptor.
+- Publicación: los cambios solo pasan a la web pública cuando Pablo Vicens
+  fusiona la rama edicion con main.
+
+ARCHIVOS IMPORTANTES
+--------------------
+- .pages.yml: formularios de Pages CMS.
+- content/: textos y contenidos editables.
+- content/multimedia_section.json: interruptor de la pestaña Multimedia.
+- scripts/build.js: genera automáticamente la versión pública o privada.
+- netlify.toml: configuración de Netlify.
+- dist/: resultado generado; no debe editarse manualmente.
+
+FASE 1 · GITHUB
+---------------
+1. Crear un repositorio privado y vacío.
+2. Subir el contenido completo de esta carpeta, no el ZIP.
+3. Comprobar que .pages.yml aparece en la raíz.
+4. Mantener main como rama principal.
+5. Crear una segunda rama llamada exactamente: edicion
+6. No borrar la rama edicion después de publicar.
+
+FASE 2 · NETLIFY
+----------------
+1. Add new project > Import an existing project.
+2. Elegir GitHub y seleccionar el repositorio.
+3. Confirmar:
+   - Build command: npm run build
+   - Publish directory: dist
+4. Publicar el primer despliegue.
+5. En Branches and deploy contexts, habilitar únicamente la rama edicion.
+6. La rama main se mostrará como web pública.
+7. La rama edicion tendrá una dirección semejante a:
+   edicion--nombre-del-sitio.netlify.app
+
+FASE 3 · ACCESO PRIVADO A LA RAMA EDICION
+-----------------------------------------
+1. Activar Netlify Identity.
+2. Elegir registro Invite only.
+3. Invitar a:
+   - Pablo Vicens
+   - Gabriela Cobo del Rosal Pérez
+   - Pablo Fernández de Casadevante Mayordomo
+4. Asignar el rol exacto: member
+5. Cada invitado establece su contraseña desde el correo de Netlify.
+6. Probar la dirección de la rama edicion en una ventana privada del navegador.
+
+FASE 4 · PAGES CMS
+------------------
+1. Entrar en app.pagescms.org.
+2. Acceder con GitHub e instalar la aplicación de Pages CMS para el repositorio.
+3. Abrir el repositorio.
+4. Seleccionar siempre la rama edicion antes de modificar contenidos.
+5. Invitar por correo a Gabriela y Pablo como colaboradores de Pages CMS.
+6. Los colaboradores editan contenidos y medios, pero no el diseño.
+
+FASE 5 · TRABAJO DIARIO
+-----------------------
+1. Gabriela o Pablo entran en Pages CMS.
+2. Seleccionan la rama edicion.
+3. Modifican o añaden contenido.
+4. Guardan.
+5. Netlify genera automáticamente la nueva versión privada de edicion.
+6. Pablo Vicens revisa esa dirección privada.
+7. La web pública main permanece sin cambios.
+
+MULTIMEDIA
+----------
+Ruta en Pages CMS:
+Contenido general > Presentación de Multimedia
+
+Interruptor:
+Mostrar pestaña Multimedia
+
+- Desactivado: la pestaña y la sección no aparecen.
+- Activado: aparecen la pestaña y los contenidos multimedia publicados.
+- Cada contenido tiene además su propio interruptor Mostrar en la web.
+- Los vídeos se alojan preferentemente en YouTube o plataforma institucional.
+
+PUBLICAR LOS CAMBIOS
+--------------------
+1. Revisar la rama edicion.
+2. En GitHub, crear una Pull Request:
+   base: main
+   compare: edicion
+3. Revisar el resumen de cambios.
+4. Pulsar Merge pull request.
+5. Netlify realizará un único despliegue de producción.
+6. Comprobar la web pública.
+7. Mantener la rama edicion para las modificaciones siguientes.
+
+REGLA PRINCIPAL
+---------------
+Nunca editar directamente la rama main desde Pages CMS.
+Todo el trabajo de contenidos debe hacerse en edicion.

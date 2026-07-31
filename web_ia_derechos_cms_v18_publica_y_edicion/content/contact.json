@@ -1,0 +1,18 @@
+{
+  "intro": "Para cualquier consulta relacionada con las actividades desarrolladas por los grupos de investigación e innovación docente integrados en este portal, así como con los congresos, jornadas, publicaciones o proyectos que en él se difunden, puede dirigirse a cualquiera de las personas responsables de la iniciativa.",
+  "people": [
+    {
+      "name": "Dra. Gabriela Cobo del Rosal Pérez",
+      "position": "Profesora Titular de Historia del Derecho",
+      "institution": "Universidad Rey Juan Carlos",
+      "email": "gabriela.cobodelrosal@urjc.es"
+    },
+    {
+      "name": "Dr. Pablo Fernández de Casadevante Mayordomo",
+      "position": "Profesor Titular de Derecho Constitucional",
+      "institution": "Universidad Rey Juan Carlos",
+      "email": "pablo.fernandezdecasadevante@urjc.es"
+    }
+  ],
+  "closing": "Las consultas serán atendidas a la mayor brevedad posible. Cuando la cuestión se refiera específicamente a alguno de los grupos de investigación o de innovación docente, podrá ser derivada al miembro o equipo responsable de la actividad correspondiente. Se ruega utilizar preferentemente el correo electrónico institucional."
+}

@@ -1,0 +1,41 @@
+    <section class="section tinted multimedia-section" id="multimedia">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Multimedia</p>
+          <h2>{{MULTIMEDIA_TITLE}}</h2>
+          <div class="prose">{{MULTIMEDIA_HTML}}</div>
+        </div>
+
+        <div class="media-type-grid" aria-label="Tipos de contenido multimedia">
+          <article class="media-type-card">
+            <span class="media-type-icon" aria-hidden="true">▶</span>
+            <h3>Vídeos</h3>
+            <p>Clases, entrevistas, divulgación y materiales docentes reproducidos desde YouTube o la plataforma institucional.</p>
+          </article>
+          <article class="media-type-card">
+            <span class="media-type-icon" aria-hidden="true">◉</span>
+            <h3>Pódcast y audios</h3>
+            <p>Episodios, conversaciones y grabaciones sonoras acompañadas de descripción y materiales complementarios.</p>
+          </article>
+          <article class="media-type-card">
+            <span class="media-type-icon" aria-hidden="true">▤</span>
+            <h3>Conferencias y presentaciones</h3>
+            <p>Jornadas grabadas, ponencias, mesas redondas y presentaciones narradas.</p>
+          </article>
+        </div>
+
+        <div class="multimedia-filter filter-group" data-filter-target=".media-card"
+             data-filter-attribute="type" aria-label="Filtros de contenidos multimedia">
+          <button class="filter-button active" type="button" data-filter="all">Todos</button>
+          <button class="filter-button" type="button" data-filter="Vídeo">Vídeos</button>
+          <button class="filter-button" type="button" data-filter="Pódcast">Pódcast</button>
+          <button class="filter-button" type="button" data-filter="Audio">Audios</button>
+          <button class="filter-button" type="button" data-filter="Conferencia grabada">Conferencias</button>
+        </div>
+
+        <div class="multimedia-grid">
+          {{MULTIMEDIA_ITEMS}}
+        </div>
+      </div>
+    </section>
+

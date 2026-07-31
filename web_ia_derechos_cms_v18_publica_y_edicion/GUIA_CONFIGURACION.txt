@@ -1,0 +1,237 @@
+VERSIÓN PRIVADA CON PANEL DE EDICIÓN
+=======================================
+
+Esta versión incorpora el nuevo contenido del documento Word y corrige la
+cabecera a:
+
+IA, derechos fundamentales y creatividad
+
+ESTRUCTURA
+----------
+- dist/                 Web ya construida y lista para Netlify.
+- content/              Textos, proyectos, resultados, recursos y avisos.
+- .pages.yml            Configuración del panel Pages CMS.
+- scripts/build.js      Genera automáticamente la web.
+- static/               Logotipo, imágenes y documentos.
+- netlify.toml          Configuración del despliegue.
+
+PRUEBA LOCAL
+------------
+Haz doble clic en:
+
+ABRIR_VISTA_PREVIA.html
+
+Este archivo abre dist/VISTA_PREVIA_LOCAL.html, una copia preparada expresamente
+para funcionar desde el disco con todos sus colores, fuentes, imágenes y formatos.
+
+No abras directamente dist/privado/index.html para revisarla en local, porque esa
+página utiliza rutas absolutas pensadas para Netlify. En Netlify sí funcionará
+correctamente y quedará protegida mediante contraseña.
+
+FLUJO RECOMENDADO
+-----------------
+1. Crear un repositorio privado en GitHub.
+2. Subir todos los archivos de esta carpeta al repositorio.
+3. Conectar el repositorio con Netlify.
+4. Netlify ejecutará: npm run build
+5. Activar Netlify Identity.
+6. Seleccionar registro “Invite only”.
+7. Invitar a Pablo Vicens, Gabriela Cobo del Rosal Pérez y
+   Pablo Fernández de Casadevante Mayordomo.
+8. Asignar a los tres el rol exacto: member
+9. Instalar Pages CMS para el repositorio.
+10. Invitar a Gabriela y Pablo como colaboradores de contenido.
+
+PAGES CMS
+---------
+El archivo .pages.yml crea formularios para:
+
+- Portada y textos generales.
+- Presentación de IAIURIS, DEHART y CXT.
+- Resultados y actividades.
+- Recursos y publicaciones.
+- Multimedia: vídeos, pódcast, audios y conferencias grabadas.
+- Avisos.
+- Otrosí / Recursos.
+- Contactos.
+
+Los editores no pueden modificar el diseño desde esos formularios.
+
+ACCESOS
+-------
+- Para ver la web privada: dirección de Netlify + correo y contraseña.
+- Para editar: /admin/ y después Pages CMS.
+- Gabriela y Pablo no necesitan acceso técnico a Netlify ni al código.
+- Pablo Vicens conserva el acceso a GitHub, Netlify y Pages CMS.
+
+PUBLICACIÓN DEFINITIVA
+----------------------
+Cuando el boceto quede aprobado, se retirarán:
+- la regla Role=member;
+- la pantalla de acceso para visitantes;
+- noindex;
+- el bloqueo de robots.txt.
+
+La misma web pasará a ser pública. El panel de edición seguirá siendo privado.
+
+
+CORRECCIÓN DE LA VERSIÓN 2
+--------------------------
+Se ha añadido una vista previa local con rutas relativas. La falta de formato
+de la versión anterior no se debía al sistema de contraseñas, sino a que el HTML
+de producción buscaba /styles.css y /assets/ desde la raíz del servidor.
+
+
+NOVEDAD DE LA VERSIÓN 3
+-----------------------
+Se ha creado una pestaña independiente llamada “Multimedia”.
+
+- Recursos queda reservado para publicaciones, actas, documentos, bibliografía,
+  repositorios y materiales descargables.
+- Multimedia agrupa vídeos, pódcast, audios, conferencias grabadas y
+  presentaciones narradas.
+- Los vídeos de YouTube pueden reproducirse dentro de la web sin subir el
+  archivo de vídeo a Netlify.
+- Pages CMS incluye ahora un formulario específico para añadir contenidos
+  multimedia sin tocar el código.
+
+
+NOVEDAD DE LA VERSIÓN 4
+-----------------------
+Se ha actualizado la sección CXT conforme al documento revisado:
+
+- Nueva redacción de los párrafos finales.
+- Centralización de los materiales en constitucionparatodos.com.
+- Incorporación de «La Constitución en pódcast: una narración sencilla».
+- Incorporación de «Voces constitucionales: recursos digitales para la
+  innovación docente interdisciplinar».
+
+
+NOVEDAD DE LA VERSIÓN 5
+-----------------------
+La pestaña Multimedia puede ocultarse o mostrarse desde Pages CMS.
+
+Ruta en el panel:
+Contenido general > Presentación de Multimedia
+
+Interruptor:
+Mostrar pestaña Multimedia
+
+- Desactivado: no aparecen ni la pestaña ni la sección en la web.
+- Activado: aparecen la pestaña y todos los contenidos multimedia publicados.
+
+Los editores pueden preparar vídeos, pódcast y audios mientras la pestaña está
+oculta. Cuando haya material suficiente, se activa el interruptor y se publica.
+
+
+NOVEDAD DE LA VERSIÓN 6
+-----------------------
+Se ha sustituido el logotipo de la web por el nuevo símbolo geométrico facilitado
+por el usuario. También se ha actualizado el favicon correspondiente.
+
+
+NOVEDAD DE LA VERSIÓN 7
+-----------------------
+Se ha aumentado el tamaño del logotipo en la cabecera principal para mejorar
+su presencia visual y su equilibrio con el título de la web.
+
+
+NOVEDAD DE LA VERSIÓN 8
+-----------------------
+Se ha aumentado de nuevo el tamaño del logotipo de la cabecera para darle una
+presencia todavía mayor, manteniendo el equilibrio con el título y el menú.
+
+
+NOVEDAD DE LA VERSIÓN 9
+-----------------------
+Se ha reajustado la proporción de la cabecera para aproximarla a la referencia
+visual aportada por el usuario:
+
+- logotipo más grande;
+- mayor separación entre logo y textos;
+- título y subtítulo algo más visibles;
+- cabecera con una proporción general más equilibrada.
+
+
+NOVEDAD DE LA VERSIÓN 10
+------------------------
+Se ha reajustado de nuevo la cabecera para aproximarla más a la referencia visual:
+
+- logotipo todavía más grande;
+- bloque de marca más dominante en la zona izquierda;
+- mejor equilibrio entre logo, título y subtítulo;
+- composición más parecida a la imagen de referencia.
+
+
+NOVEDAD DE LA VERSIÓN 11
+------------------------
+Se ha realizado un ajuste fino adicional aumentando ligeramente el tamaño del
+logotipo de la cabecera, manteniendo el resto de la composición sin cambios.
+
+
+NOVEDAD DE LA VERSIÓN 12
+------------------------
+Se ha corregido el desbordamiento horizontal que aparecía en la cabecera:
+
+- el bloque del logotipo y el título deja de tener anchuras rígidas;
+- el menú superior se compacta ligeramente;
+- se añaden ajustes para anchos intermedios;
+- la página ya no debería requerir barra de desplazamiento horizontal.
+
+
+NOVEDAD DE LA VERSIÓN 13
+------------------------
+Se ha aumentado ligeramente únicamente el tamaño del logotipo de la cabecera.
+
+No se han modificado:
+- los tamaños del título y subtítulo;
+- el tamaño de las pestañas;
+- los márgenes generales;
+- la estructura flexible que evita el desplazamiento horizontal.
+
+
+NOVEDAD DE LA VERSIÓN 15
+------------------------
+Se han justificado a izquierda y derecha los párrafos de los grandes bloques
+de contenido de las distintas secciones de la web.
+
+No se han modificado:
+- la tipografía original;
+- el tamaño del logotipo;
+- la cabecera;
+- las pestañas;
+- los títulos;
+- las tarjetas;
+- los márgenes ni la estructura responsive.
+
+
+NOVEDAD DE LA VERSIÓN 16
+------------------------
+Los párrafos continúan justificados a izquierda y derecha, pero se ha
+desactivado la división automática de palabras con guiones al final de línea.
+
+El navegador ajustará la justificación mediante el espaciado entre palabras.
+
+
+NOVEDAD DE LA VERSIÓN 17
+------------------------
+Se ha sustituido el fondo degradado de la primera pantalla de portada por un
+fondo uniforme, en línea con la estética de otras secciones como “Compromiso”.
+
+No se han modificado:
+- los textos;
+- la cabecera;
+- el logotipo;
+- la estructura de la portada;
+- los tamaños ni la maquetación general.
+
+
+NOVEDAD DE LA VERSIÓN 18
+------------------------
+Esta versión incorpora dos modos de despliegue automáticos:
+
+- producción / rama main: web pública e indexable;
+- rama edicion y Deploy Previews: versión privada, no indexada y protegida
+  mediante Netlify Identity y el rol member.
+
+El interruptor de Multimedia continúa disponible en Pages CMS.
