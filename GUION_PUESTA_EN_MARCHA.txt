@@ -101,3 +101,4 @@ REGLA PRINCIPAL
 ---------------
 Nunca editar directamente la rama main desde Pages CMS.
 Todo el trabajo de contenidos debe hacerse en edicion.
+Rama de edición activada.

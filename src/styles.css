@@ -230,3 +230,10 @@ p{margin-top:0}
   .footer-bottom{flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Conserva los saltos de línea introducidos en Pages CMS
+   en las descripciones de Resultados y actividades y Recursos. */
+.result-card small,
+.resource-card p {
+  white-space: pre-line;
+}
