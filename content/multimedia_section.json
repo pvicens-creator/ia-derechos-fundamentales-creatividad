@@ -1,5 +1,5 @@
 {
-  "enabled": false,
+  "enabled": true,
   "title": "Vídeos, pódcast y contenidos audiovisuales",
   "html": "<p>Esta sección reúne los contenidos multimedia producidos o seleccionados por IAIURIS, DEHART y CXT: vídeos docentes, pódcast, audios, conferencias grabadas, entrevistas y presentaciones narradas.</p><p>Los vídeos se alojarán preferentemente en un canal de YouTube o en una plataforma institucional y se reproducirán dentro de esta página. De este modo, la web permanece ligera y se evita consumir espacio y transferencia de Netlify.</p>"
 }
